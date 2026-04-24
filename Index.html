@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(58, 67, 64);
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1{
+            color: black;
+        }
+        input{
+            padding: 10px;
+        width: 200px;
+        font-size: 16px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        }
+        button{
+             padding: 10px 20px;
+        font-size: 16px;
+        background-color: #5534a2;
+        color: rgb(32, 3, 22);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+        button:hover {
+        background-color: #0f0275;
+        }
+        #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #222;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>WEIGHT CONVERTER</h1>
+    <h4>Kg to lbs</h4>
+    <p><b>Enter weight</b></p>
+    <input type = "number" id = "kginput" placeholder = "eg: 50">
+    <button onclick = "convert()">convert</button>
+    <p id = "result"></p>
+    <script>
+        function convert(){
+        let kg = document.getElementById("kginput").value;
+        if(kg === "" || kg<=0){
+            document.getElementById("result").innerText = 
+            "please enter a valid value";
+            return;
+        }
+        let lbs = kg*2.20462;
+        lbs = lbs.toFixed(2);
+        document.getElementById("result").innerText = 
+        kg +"kg=" + lbs + "lbs";
+
+        
+        }
+    </script>
+
+</body>
+</html>
